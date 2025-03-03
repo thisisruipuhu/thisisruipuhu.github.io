@@ -6,12 +6,14 @@
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       font-family: Arial, sans-serif;
       background-color: #f5f5f5;
       color: #333;
       line-height: 1.8;
     }
+
+    /* ✅ 顶部导航栏 */
     nav {
       position: fixed;
       top: 0;
@@ -20,63 +22,117 @@
       padding: 10px 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav .nav-content {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 1000;
     }
     nav .logo {
       font-weight: bold;
       font-size: 18px;
     }
+    nav .nav-links {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
     nav .nav-links a {
-      margin-left: 20px;
       text-decoration: none;
       color: #333;
       font-weight: bold;
       font-size: 15px;
     }
+
+    h1 {
+      text-align: center;
+      margin: 120px 0 40px;
+      color: #333;
+    }
+    h2 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: #4a90e2;
+      font-size: 22px;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+    }
     .container {
       max-width: 800px;
-      margin: 100px auto;
-      padding: 20px;
-      background-color: #fff;
+      margin: auto;
+      background-color: #ffffff;
+      padding: 30px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-    h1 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
     ul {
       padding-left: 20px;
+      margin: 0;
     }
     li {
       margin-bottom: 20px;
+    }
+    .highlight {
+      color: #d6336c;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      color: #aaa;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
+  <!-- ✅ 顶部导航栏 -->
   <nav>
-    <div class="logo"><a href="index.html" style="text-decoration:none;color:#333;">Ruipu Hu</a></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
+    <div class="nav-content">
+      <div class="logo">Ruipu Hu</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="#">Projects</a>
+        <a href="publications.html">Publications</a>
+      </div>
     </div>
   </nav>
 
   <div class="container">
     <h1>Publications</h1>
+
+    <h2>2025</h2>
     <ul>
-      <li>8. Ruipu Hu and Amanda Lazar. <strong>Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns.</strong> CHI ’25 (To appear).</li>
-      <li>7. Amelia Short, Norman Makoto Su, Ruipu Hu, et al. <strong>Tracking and its Potential for Older Adults with Memory Concerns.</strong> CHI ’25 (To appear).</li>
-      <li>6. Ruipu Hu, Nancy Roderer, and Amanda Lazar. <strong>Studying Older Adults Perceptions on AI Through AI Lectures.</strong> MobiCom4AgeTech ’24.</li>
-      <li>5. Ruipu Hu, Ge Gao, and Amanda Lazar. <strong>Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens.</strong> ASSETS ’24.</li>
-      <li>4. Ruipu Hu, Alisha Pradhan, Elizabeth Bonsignore, and Amanda Lazar. <strong>Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources.</strong> CSCW ’24.</li>
-      <li>3. Daniel Manesh, Marx Boyuan Wang, Ruipu Hu, and Sang Won Lee. <strong>Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript.</strong> VL/HCC ’24.</li>
-      <li>2. Marx Boyuan Wang, Daniel Manesh, Ruipu Hu, and Sang Won Lee. <strong>IThem: Programming Internet of Things Beyond Trigger-Action Pattern.</strong> UIST ’22 Adjunct.</li>
-      <li>1. Amber Aftab, Ruipu Hu, and Sang Won Lee. <strong>Remo: Generating Interactive Tutorials by Demonstration for Online Tasks.</strong> UIST ’20 Adjunct.</li>
+      <li><span class="highlight">Ruipu Hu</span> and Amanda Lazar. <em>Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns.</em> CHI ’25 (To appear).</li>
+      <li>Amelia Short, Norman Makoto Su, <span class="highlight">Ruipu Hu</span>, et al. <em>Tracking and its Potential for Older Adults with Memory Concerns.</em> CHI ’25 (To appear).</li>
+    </ul>
+
+    <h2>2024</h2>
+    <ul>
+      <li><span class="highlight">Ruipu Hu</span>, Nancy Roderer, and Amanda Lazar. <em>Studying Older Adults Perceptions on AI Through AI Lectures.</em> MobiCom4AgeTech ’24.</li>
+      <li><span class="highlight">Ruipu Hu</span>, Ge Gao, and Amanda Lazar. <em>Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens.</em> ASSETS ’24.</li>
+      <li><span class="highlight">Ruipu Hu</span>, Alisha Pradhan, Elizabeth Bonsignore, and Amanda Lazar. <em>Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources.</em> CSCW ’24.</li>
+      <li>Daniel Manesh, Marx Boyuan Wang, <span class="highlight">Ruipu Hu</span>, and Sang Won Lee. <em>Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript.</em> VL/HCC ’24.</li>
+    </ul>
+
+    <h2>2022</h2>
+    <ul>
+      <li>Marx Boyuan Wang, Daniel Manesh, <span class="highlight">Ruipu Hu</span>, and Sang Won Lee. <em>IThem: Programming Internet of Things Beyond Trigger-Action Pattern.</em> UIST ’22 Adjunct.</li>
+    </ul>
+
+    <h2>2020</h2>
+    <ul>
+      <li>Amber Aftab, <span class="highlight">Ruipu Hu</span>, and Sang Won Lee. <em>Remo: Generating Interactive Tutorials by Demonstration for Online Tasks.</em> UIST ’20 Adjunct.</li>
     </ul>
   </div>
+
+  <footer>
+    © 2025 Ruipu Hu
+  </footer>
 
 </body>
 </html>

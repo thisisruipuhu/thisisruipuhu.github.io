@@ -8,69 +8,158 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-      background-color: #f0f2f5;
+      background-color: #f5f5f5;
       color: #333;
+      line-height: 1.8;
+    }
+
+    /* ✅ 顶部导航栏 */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 10px 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       display: flex;
       justify-content: center;
+      z-index: 1000;
+    }
+    nav .nav-content {
+      width: 100%;
+      max-width: 1000px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      height: 100vh;
     }
-    .container {
-      text-align: center;
-      padding: 20px 40px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+    nav .logo {
+      font-weight: bold;
+      font-size: 18px;
     }
-    h1 {
-      margin-bottom: 10px;
+    nav .nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
     }
-    p {
-      text-align: left;
-      line-height: 1.6;
-    }
-    a {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      background-color: #4CAF50;
-      color: white;
+    nav .nav-links a {
       text-decoration: none;
-      border-radius: 6px;
+      color: #333;
+      font-weight: bold;
+      font-size: 15px;
     }
-    a:hover {
-      background-color: #45a049;
+
+    /* ✅ 页面布局 */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 100px auto;
+      padding: 20px;
+    }
+    .profile {
+      flex: 1;
+      min-width: 280px;
+      max-width: 350px;
+      padding: 20px;
+      background-color: #e8f0fe;
+      border-radius: 12px;
+      text-align: center;
+      margin-right: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .profile img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .about {
+      flex: 2;
+      min-width: 300px;
+      padding: 0;
+      margin: 0;
+    }
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    /* ✅ 链接统一样式 */
+    .profile a, .about a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .profile a:hover, .about a:hover {
+      text-decoration: underline;
+    }
+
+    /* ✅ 小屏幕适配 */
+    @media (max-width: 500px) {
+      nav .nav-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>👋 Hi，我是 Ruipu</h1>
-    <p>欢迎来到我的个人网站！</p>
-    
-    <h2>About Me</h2>
-    <p>
-      I am a Ph.D. candidate at the <strong>University of Maryland's Information School</strong>, 
-      where I work with <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Dr. Amanda Lazar</a> 
-      at <strong>The Health Aging and Technology Lab</strong>. 
-      My research interests span the fields of <strong>accessibility and inclusive design</strong>, 
-      <strong>health informatics</strong>, and <strong>Human-Computer Interaction</strong>.
-    </p>
 
-    <p>
-      I am interested in studying how technology becomes incorporated into older adults’ lives, 
-      and the interaction occurs during it. Specifically, I have studied how older adults coordinate 
-      and utilize different sociotechnical resources to attain certain technology use.
-    </p>
+  <!-- ✅ 顶部导航 -->
+  <nav>
+    <div class="nav-content">
+      <div class="logo">Ruipu Hu</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="publications.html">Publications</a>
+      </div>
+    </div>
+  </nav>
 
-    <p>
-      Prior to my doctoral studies, I worked with 
-      <a href="https://sangwonlee.net/" target="_blank">Dr. Sang Won Lee</a> at <strong>Virginia Tech</strong>. 
-      His research aims to create interactive systems that facilitate empathy among users.
-    </p>
+  <!-- ✅ 页面主体 -->
+  <div class="container" id="home">
+    <div class="profile">
+      <img src="https://pbs.twimg.com/profile_images/1850006212672135168/VrG4hxtL_400x400.jpg" alt="ruipu's figure">
+      <p>Ph.D. candidate<br>University of Maryland's iSchool</p>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+        <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank">🔗 LinkedIn</a>
+        <a href="https://www.linkedin.com/in/ruipuhu/overlay/1739557588844/single-media-viewer/?profileId=ACoAAC9wRq4B6eM_nsCBgJIxOpcxFmVAYgW0r8E" target="_blank">📄 CV</a>
+        <a href="https://x.com/HuRuipu" target="_blank">🐦 X</a>
+        <a href="https://scholar.google.com/citations?user=E8vCAyIAAAAJ&hl=en&oi=ao" target="_blank">📚 Google Scholar</a>
+      </div>
+      <p>📧 <a href="mailto:rhu12@umd.edu">Email me</a></p>
+    </div>
 
-    <a href="mailto:你的邮箱地址">📧 联系我</a>
+    <div class="about">
+      <h2>About Me</h2>
+      <p>
+        I am a Ph.D. candidate at the University of Maryland's Information School,
+        where I work with <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Dr. Amanda Lazar</a>
+        at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology Lab</a>.
+        My research sits at the intersection of Human-Computer Interaction (HCI), Computer-Supported Cooperative Work (CSCW),
+        and technology design. I focus on understanding how emerging technologies can serve as meaningful additions
+        to older adults’ lives as they navigate changes in aging and cognitive abilities.
+      </p>
+      <p>
+        Previously, I worked with <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Dr. Sang Won Lee</a>
+        at Virginia Tech, developing interactive systems to facilitate empathy among users.
+      </p>
+    </div>
   </div>
+
+  <footer>
+    © 2025 Ruipu Hu
+  </footer>
+
 </body>
 </html>
