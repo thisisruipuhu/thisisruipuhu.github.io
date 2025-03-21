@@ -11,34 +11,47 @@
       background-color: #f5f5f5;
       color: #333;
       line-height: 1.8;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    /* header */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: #ffffff;
-      padding: 10px 30px;
+      background: linear-gradient(to right, #ffffff, #f0f4ff);
+      padding: 12px 40px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
+      align-items: center;
       z-index: 1000;
     }
     nav .nav-content {
       width: 100%;
-      max-width: 1000px;
+      max-width: 1200px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    nav .logo {
+    nav .logo a {
       font-weight: bold;
-      font-size: 18px;
+      font-size: 22px;
+      text-decoration: none;
+      color: #1a237e;
+      font-family: 'Georgia', serif;
+    }
+    nav .logo small {
+      display: block;
+      font-size: 12px;
+      font-weight: normal;
+      color: #777;
+      margin-top: 2px;
     }
     nav .nav-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       align-items: center;
     }
     nav .nav-links a {
@@ -46,14 +59,22 @@
       color: #333;
       font-weight: bold;
       font-size: 15px;
+      transition: color 0.3s ease;
+    }
+    nav .nav-links a:hover {
+      color: #1a73e8;
     }
 
-    /* header */
+    main {
+      flex: 1;
+      padding-top: 90px;
+    }
+
     .container {
       display: flex;
       flex-wrap: wrap;
       max-width: 1000px;
-      margin: 100px auto;
+      margin: 0 auto;
       padding: 20px;
     }
     .profile {
@@ -68,8 +89,10 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
     .profile img {
-      width: 120px;
-      height: 120px;
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      object-position: top center;
       border-radius: 50%;
       margin-bottom: 20px;
     }
@@ -89,7 +112,6 @@
       color: white;
     }
 
-    /* style */
     .profile a, .about a {
       color: #0066cc;
       text-decoration: none;
@@ -98,7 +120,22 @@
       text-decoration: underline;
     }
 
-    /* for small screen */
+    .about ul li {
+      margin-bottom: 10px;
+    }
+    .about ul li strong {
+      color: #444;
+    }
+
+    .news-section {
+      max-width: 1000px;
+      margin: 40px auto 0 auto;
+      padding: 0 20px;
+    }
+    .news-section ul li {
+      margin-bottom: 14px;
+    }
+
     @media (max-width: 500px) {
       nav .nav-content {
         flex-direction: column;
@@ -114,10 +151,13 @@
 </head>
 <body>
 
-  <!--vavigation -->
+
   <nav>
     <div class="nav-content">
-      <div class="logo">Ruipu Hu</div>
+      <div class="logo">
+        <a href="#home">Ruipu Hu</a>
+        <small>HCI Researcher · PhD Candidate</small>
+      </div>
       <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#projects">Projects</a>
@@ -126,32 +166,54 @@
     </div>
   </nav>
 
-  <!-- main body -->
-  <div class="container" id="home">
-    <div class="profile">
-      <img src="https://pbs.twimg.com/profile_images/1850006212672135168/VrG4hxtL_400x400.jpg" alt="ruipu's figure">
-      <p>Ph.D. candidate<br>University of Maryland's iSchool</p>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
-        <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank">🔗 LinkedIn</a>
-        <a href="https://www.linkedin.com/in/ruipuhu/overlay/1739557588844/single-media-viewer/?profileId=ACoAAC9wRq4B6eM_nsCBgJIxOpcxFmVAYgW0r8E" target="_blank">📄 CV</a>
-        <a href="https://x.com/HuRuipu" target="_blank">🐦 X</a>
-        <a href="https://scholar.google.com/citations?user=E8vCAyIAAAAJ&hl=en&oi=ao" target="_blank">📚 Google Scholar</a>
+  
+
+  <main>
+    <div class="container" id="home">
+      <div class="profile">
+        <img src="https://ischool.umd.edu/wp-content/uploads/Ruipu-Hu-Headshot-Frame.jpg" alt="ruipu's figure">
+        <p>Ph.D. candidate<br>University of Maryland's iSchool</p>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0;">
+          <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank">🔗 LinkedIn</a>
+          <a href="https://www.linkedin.com/in/ruipuhu/overlay/1739557588844/single-media-viewer/?profileId=ACoAAC9wRq4B6eM_nsCBgJIxOpcxFmVAYgW0r8E" target="_blank">📄 CV</a>
+          <a href="https://x.com/HuRuipu" target="_blank">🐦 X</a>
+          <a href="https://scholar.google.com/citations?user=E8vCAyIAAAAJ&hl=en&oi=ao" target="_blank">📚 Google Scholar</a>
+        </div>
+        <p>📧 <a href="mailto:rhu12@umd.edu">Email me</a></p>
       </div>
-      <p>📧 <a href="mailto:rhu12@umd.edu">Email me</a></p>
+
+      <div class="about">
+        <h2>About Me</h2>
+        <p>
+          I am a Ph.D. candidate at the University of Maryland's Information School,
+          where I work with <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Dr. Amanda Lazar</a>
+          at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.
+          My research sits in Human-Computer Interaction (HCI), draws on Computer-Supported Cooperative Work (CSCW) and contributes to designing with older adults and people with cognitive impairments. Currently, I focus on understanding how videoconferencing technology can serve as meaningful additions to older adults’ lives as they navigate changes in aging and cognitive abilities. My work is published at top HCI venues, including CHI, CSCW, and ASSETS. 
+        </p>
+        <p>
+          Prior to my PhD, I earned a Bachelor’s degree in Computer Science from Virginia Tech, where I worked with <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Dr. Sang Won Lee</a> on developing interactive systems to facilitate empathy among users.
+        </p>
+      </div>
     </div>
 
-    <div class="about">
-      <h2>About Me</h2>
-      <p>
-        I am a Ph.D. candidate at the University of Maryland's Information School,
-        where I work with <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Dr. Amanda Lazar</a>
-        at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.
-        My research sits in Human-Computer Interaction (HCI), draws on Computer-Supported Cooperative Work (CSCW) and contributes to designing with older adults and people with cognitive impairments. Currently, I focus on understanding how videoconferencing technology can serve as meaningful additions to older adults’ lives as they navigate changes in aging and cognitive abilities. My work is published at top HCI venues, including CHI, CSCW, and ASSETS. 
-      <p>
-        Prior to my PhD, I earned a Bachelor’s degree in Computer Science from Virginia Tech, where I worked with <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Dr. Sang Won Lee</a> on developing interactive systems to facilitate empathy among users.
-      </p>
+    
+
+
+    <div class="news-section">
+      <h2>Latest Updates ✨</h2>
+      <ul style="padding-left: 20px; list-style-type: disc;">
+        <li><strong>May 2025:</strong> ✈️ Headed to Yokohama, Japan for CHI 2025 (April 26 – May 1)! Let’s connect if you’ll be around.</li>
+        <li><strong>Mar 2025:</strong> 🎉 Two full papers accepted to CHI 2025! <em>“Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns”</em> (with Amanda Lazar) and <em>“Tracking and its Potential for Older Adults with Memory Concerns”</em> (with amazing collaborators including Amelia Short, Norman Makoto Su, Eun Kyoung Choe, Hernisa Kacorri, Margaret Danilovich, David E. Conroy, Shannon Jette, Beth Barnett, and Amanda Lazar).</li>
+        <li><strong>Mar 11, 2025:</strong> 🎙️ Invited to my research at Professor Ge Gao’s lab: <em>“Supporting Meaningful Activities While Navigating Aging and Cognitive Changes.”</em></li>
+        <li><strong>Feb 21, 2025:</strong> 🎙️ Invited to give a talk at Columbia HCI: <em>“Exploring Videoconferencing Technology Use While Navigating Aging and Cognitive Changes.”</em></li>
+        <li><strong>Jan 29, 2025:</strong> 📚 Attended ATIA 2025 Pre-Conference in Orlando, FL - such an energizing start to the year!</li>
+        <li><strong>Nov 18, 2024:</strong> 🎙️ Presented poster at MobiCom4AgeTech Workshop (Washington D.C.): <em>“Studying Older Adults’ Perceptions of AI Through AI Lectures.”</em></li>
+        <li><strong>Nov 2024:</strong> 🎙️ Presented first-authored paper at CSCW 2024 (San José, Costa Rica): <em>“Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources”</em></li>
+        <li><strong>Oct 2024:</strong> 🎙️ Presented at ASSETS 2024 (St. John’s, Canada): <em>“Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens.”</em></li>
+        <li><strong>Jun 2024:</strong> 🎉 VL/HCC full paper accepted (with Daniel Manesh, Marx Wang, Sang Won Lee): <em>“Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript.”</em></li>
+      </ul>
     </div>
-  </div>
+  </main>
 
   <footer>
     © 2025 Ruipu Hu
