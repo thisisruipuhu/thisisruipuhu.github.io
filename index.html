@@ -1,154 +1,367 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap">
+
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
   <meta charset="UTF-8">
-  <title>Ruipu's Homepage</title>
+  <title>Ruipu Hu</title>
   <style>
-    body {
+    /* ====== Base ====== */
+    :root{
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --border: #e6e6e6;
+      --link: #111111;
+      --link-hover: #000000;
+      --maxw: 980px;
+    }
+  
+    * { box-sizing: border-box; }
+  
+    body{
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.8;
+      font-family: "Archivo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    nav {
+
+  
+    /* ====== Links ====== */
+    a{
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover{
+      color: var(--link-hover);
+      text-decoration-thickness: 2px;
+    }
+  
+    /* ====== Top Nav (black/white) ====== */
+    nav{
       position: fixed;
       top: 0;
       width: 100%;
-      background: linear-gradient(to right, #ffffff, #f0f4ff);
-      padding: 12px 40px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
       z-index: 1000;
     }
-    nav .nav-content {
+  
+    nav .nav-content{
       width: 100%;
-      max-width: 1200px;
+      max-width: var(--maxw);
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: baseline;
+      gap: 18px;
     }
-    nav .logo a {
-      font-weight: bold;
-      font-size: 22px;
+  
+    nav .logo a{
+      font-weight: 800;
+      font-size: 50px;
+      letter-spacing: 0.4px;
       text-decoration: none;
-      color: #1a237e;
-      font-family: 'Georgia', serif;
     }
-    nav .logo small {
+
+    
+  
+    nav .logo small{
       display: block;
-      font-size: 12px;
-      font-weight: normal;
-      color: #777;
-      margin-top: 2px;
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 4px;
     }
-    nav .nav-links {
+  
+    nav .nav-links{
       display: flex;
-      gap: 24px;
+      gap: 18px;
       align-items: center;
-    }
-    nav .nav-links a {
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-      font-size: 15px;
-      transition: color 0.3s ease;
-    }
-    nav .nav-links a:hover {
-      color: #1a73e8;
-    }
-
-    main {
-      flex: 1;
-      padding-top: 90px;
-    }
-
-    .container {
-      display: flex;
       flex-wrap: wrap;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
     }
-    .profile {
+  
+    nav .nav-links a{
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 24px;
+      padding: 8px 10px;
+      border-radius: 8px;
+    }
+  
+    nav .nav-links a:hover{
+      background: #f5f5f5;
+    }
+  
+    main{
       flex: 1;
-      min-width: 280px;
-      max-width: 350px;
-      padding: 20px;
-      background-color: #e8f0fe;
-      border-radius: 12px;
-      text-align: center;
-      margin-right: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding-top: 92px;
     }
-    .profile img {
-      width: 220px;
-      height: 220px;
+  
+    /* ====== Layout ====== */
+    .container{
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 28px 24px 12px 24px;
+      display: grid;
+      grid-template-columns: 180px 1fr; 
+      gap: 40px; 
+      align-items: start;
+    }
+
+  
+    /* Left profile card -> now clean, no blue box */
+    .profile{
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+      margin-right: 0;
+      box-shadow: none;
+      border: none;
+      display: flex;         
+      flex-direction: column;
+      align-items: center;      
+      text-align: center;     
+    }
+  
+    .profile img{
+      width: 210px;
+      height: 210px;
       object-fit: cover;
       object-position: top center;
-      border-radius: 50%;
-      margin-bottom: 20px;
+      border-radius: 14px; 
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
     }
-    .about {
-      flex: 2;
-      min-width: 300px;
+  
+    .profile p{
+      margin: 0 0 14px 0;
+      color: var(--muted);
+    }
+  
+    /* icon row: make it minimal & black */
+    .profile i{
+      color: #111;
+    }
+
+    /* === Center social icons under the photo === */
+    .profile .social-icons {
+      display: flex;
+      justify-content: center;   
+      align-items: center;
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+
+    .profile a{
+      text-decoration: none;
+    }
+    .profile a:hover i{
+      color: #000;
+    }
+  
+    .about{
       padding: 0;
       margin: 0;
     }
-    h1, h2 {
-      margin-bottom: 20px;
+  
+    h1, h2{
+      margin: 0 0 14px 0;
+      line-height: 1.25;
     }
-    footer {
+  
+    h2{
+      font-size: 20px;
+      letter-spacing: 0.2px;
+    }
+  
+    /* Make paragraphs a bit tighter and cleaner */
+    .about p{
+      margin: 0 0 14px 0;
+    }
+  
+    /* Your job-market callout -> change from red to subtle */
+    .about p[style]{
+      color: var(--muted) !important;
+      font-weight: 600 !important;
+      background: #fafafa;
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      border-radius: 12px;
+    }
+  
+    /* ====== News ====== */
+    .news-section{
+      max-width: var(--maxw);
+      margin: 18px auto 0 auto;
+      padding: 0 24px 40px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ====== Recent Updates: 2-column layout ====== */
+    .updates{
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .update-row{
+      display: grid;
+      grid-template-columns: 120px 1fr; 
+      column-gap: 34px;
+      align-items: start;
+      margin-bottom: 6px;
+    }
+
+    .update-date{
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: var(--text);
+      opacity: 0.9;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .update-body{
+      color: var(--text);
+      font-size: 18px;
+      line-height: 1.65; 
+    }
+
+    .update-body p{
+      margin: 0;
+    }
+
+    .update-body a{
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+
+    @media (max-width: 700px){
+      .update-row{
+        grid-template-columns: 1fr;
+        row-gap: 8px;
+      }
+      .update-date{
+        font-size: 20px;
+        opacity: 0.75;
+      }
+    }
+
+  
+    .news-section h2{
+      margin-top: 24px;
+    }
+  
+    .news-section ul{
+      margin: 0;
+      padding-left: 18px;
+    }
+  
+    .news-section ul li{
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+  
+    .news-section ul li strong{
+      color: var(--text);
+    }
+
+    /* ====== Publications ====== */
+.publications-section{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px 40px 24px;
+  border-top: 1px solid var(--border);
+}
+
+.publications-section h2{
+  margin-top: 28px;
+}
+
+.pub-group{
+  margin-top: 12px;
+}
+
+.pub-year{
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  font-size: 16px;
+  margin: 18px 0 10px 0;
+}
+
+.pub-list{
+  margin: 0;
+  padding-left: 18px;  
+}
+
+.pub-list li{
+  margin-bottom: 12px;
+  line-height: 1.65;
+}
+
+.pub-venue{
+  font-weight: 700;
+}
+
+  
+
+
+
+
+    footer{
       text-align: center;
-      padding: 40px 20px;
-      background-color: #333;
-      color: white;
+      padding: 28px 20px;
+      background: transparent;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      font-size: 13px;
     }
-
-    .profile a, .about a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    .profile a:hover, .about a:hover {
-      text-decoration: underline;
-    }
-
-    .about ul li {
-      margin-bottom: 10px;
-    }
-    .about ul li strong {
-      color: #444;
-    }
-
-    .news-section {
-      max-width: 1000px;
-      margin: 40px auto 0 auto;
-      padding: 0 20px;
-    }
-    .news-section ul li {
-      margin-bottom: 14px;
-    }
-
-    @media (max-width: 500px) {
-      nav .nav-content {
-        flex-direction: column;
+  
+    /* ====== Responsive ====== */
+    @media (max-width: 860px){
+      .container{
+        grid-template-columns: 1fr;
+      }
+      .profile img{
+        width: 180px;
+        height: 180px;
+      }
+      nav .nav-content{
         align-items: flex-start;
+        flex-direction: column;
       }
-      nav .nav-links {
-        width: 100%;
-        justify-content: center;
-        margin-top: 10px;
-      }
+      
+
+
+
+
+
+
     }
   </style>
+  
 </head>
 <body>
 
@@ -157,13 +370,13 @@
     <div class="nav-content">
       <div class="logo">
         <a href="#home">Ruipu Hu</a>
-        <small>HCI Researcher · PhD Candidate</small>
       </div>
       <div class="nav-links">
-        <a href="RUIPU_CV.pdf" target="_blank">CV</a>
         <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="publications.html">Publications</a>
+        <a href="#news">News</a>
+        <!-- <a href="#projects">Projects</a> -->
+        <a href="#publications">Publications</a>
+        <a href="RUIPU_CV.pdf" target="_blank">CV</a>
       </div>
     </div>
   </nav>
@@ -174,7 +387,7 @@
   <div class="profile">
      <img src="https://ischool.umd.edu/wp-content/uploads/Ruipu-Hu-Headshot-Frame.jpg" alt="ruipu's figure">
     <p>Ph.D. candidate<br>University of Maryland's iSchool</p>
-    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:20px 0;">
+    <div class="social-icons">
       <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank" title="LinkedIn">
         <i class="fab fa-linkedin fa-lg"></i>
       </a>
@@ -193,9 +406,8 @@
 
 
       <div class="about">
-        <h2>About Me</h2>
         <p>
-          Hi！I am Ruipu Hu, a PhD candidate at the University of Maryland’s College of Information (iSchool), advised by Professor <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Amanda Lazar</a>
+          Hi！I am a PhD candidate at the University of Maryland’s College of Information (iSchool), advised by Professor <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Amanda Lazar</a>
           at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.  I expect to receive my PhD in May 2026. My research appears or is under review at premier HCI venues including ACM CHI, CSCW, ASSETS, and UIST, and has been recognized with a Best Paper Award at CHI 2025. Prior to my PhD, I earned a B.S. in Computer Science from Virginia Tech, where I worked with Professor <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Sang Won Lee</a> to design interactive systems that facilitate empathy among users.
         </p>
        <p style="color: #c1121f; font-weight: bold;">
@@ -216,24 +428,296 @@
     
 
 
-    <div class="news-section">
-      <h2>Latest Updates ✨</h2>
-      <ul style="padding-left: 20px; list-style-type: disc;">
-        <li><strong>May 2025:</strong> ✈️ Headed to Yokohama, Japan for CHI 2025 (April 26 – May 1)! Let’s connect if you’ll be around.</li>
-        <li><strong>Mar 2025:</strong> 🎉 Two full papers accepted to CHI 2025! <em>“<a href="https://programs.sigchi.org/chi/2025/program/content/188446" target="_blank">Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns”</a></em> (with Amanda Lazar) and <em>“<a href="https://programs.sigchi.org/chi/2025/program/content/189508" target="_blank">Tracking and its Potential for Older Adults with Memory Concerns”</a></em> (with amazing collaborators including Amelia Short, Norman Makoto Su, Eun Kyoung Choe, Hernisa Kacorri, Margaret Danilovich, David E. Conroy, Shannon Jette, Beth Barnett, and Amanda Lazar).</li>
-        <li><strong>Mar 11, 2025:</strong> 🎙️ Invited to share my research at Professor <a href="https://ischool.umd.edu/directory/ge-gao/" target="_blank">Ge Gao</a>'s lab: <em>“Supporting Meaningful Activities While Navigating Aging and Cognitive Changes.”</em></li>
-        <li><strong>Feb 21, 2025:</strong> 🎙️ Invited to give a talk at <a href="https://columbiahci.github.io/#" target="_blank">Columbia HCI</a>: <em>“Exploring Videoconferencing Technology Use While Navigating Aging and Cognitive Changes.”</em></li>
-        <li><strong>Jan 29, 2025:</strong> 📚 Attended <a href="https://www.atia.org/precon/" target="_blank">ATIA 2025 Pre-Conference</a> in Orlando, FL - such an energizing start to the year!</li>
-        <li><strong>Nov 18, 2024:</strong> 🎙️ Presented poster at <a href="https://mobicom4agetech.github.io/2024/index.html" target="_blank">MobiCom4AgeTech Workshop</a> (Washington D.C.): <em>“Studying Older Adults’ Perceptions of AI Through AI Lectures.”</em></li>
-        <li><strong>Nov 2024:</strong> 🎙️ Presented first-authored paper at CSCW 2024 (San José, Costa Rica): <em>“<a href="https://dl.acm.org/doi/10.1145/3637401" target="_blank">Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources”</a></em></li>
-        <li><strong>Oct 2024:</strong> 🎙️ Presented first-authored paper at ASSETS 2024 (St. John’s, Canada): <em>“<a href="https://dl.acm.org/doi/10.1145/3663548.3675647" target="_blank">Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens.”</a></em></li>
-        <li><strong>Jun 2024:</strong> 🎉 VL/HCC full paper accepted (with Daniel Manesh, Marx Wang, Sang Won Lee): <em>“<a href="https://ieeexplore.ieee.org/abstract/document/10714540" target="_blank">Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript.”</a></em></li>
-      </ul>
+    <div class="news-section" id="news">
+      <h2>RECENT UPDATES </h2>
+      <div class="updates">
+
+        <div class="update-row">
+          <div class="update-date">JAN 2026</div>
+          <div class="update-body">
+            <p>🎉 Had two full papers conditionally accepted to <a href="https://chi2026.acm.org/">CHI 2026</a>!
+              <!-- <em>“<a href="" target="_blank">Looking Beyond the Screen to Study the Technology Use of Older People Experiencing Cognitive Concerns</a>”</em> (with Eun Kyoung Choe and Amanda Lazar) and 
+              <em>“<a href="" target="_blank">Interrogating the “Us” Versus “Them” Dichotomy in Technology Research with Older Adults.</a>”</em>
+              (with amazing collaborators including Amanda Lazar, Elissa Carpio, Ruipu Hu, Beth Barnett, Kibron Tesfatsion, and Sheena Erete). -->
+            </p>
+          </div>
+        </div>
+
+
+        <div class="update-row">
+          <div class="update-date">NOV 2025</div>
+          <div class="update-body">
+            <p>Invited Panelist for “A Panel on Graduate School” at the University of Maryland, hosted by Prof. Eun Kyoung Choe, sharing PhD experiences with undergraduate students.</p>
+          </div>
+        </div>
+
+
+        <div class="update-row">
+          <div class="update-date">AUG 2025</div>
+          <div class="update-body">
+            <p> Served as Co-Instructor for INST 808: Seminar in Research Methods and Data Analysis at the University of Maryland, College Park.</p>
+
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date">MAY 2025</div>
+          <div class="update-body">
+            <p>Headed to Yokohama, Japan for CHI 2025 (April 26 – May 1)! Let’s connect if you’ll be around.</p>
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date">MAY 2025</div>
+          <div class="update-body">
+            <p>
+              🏆 Received the Best Paper Award at <a href="https://chi2025.acm.org/">CHI 2025</a>!
+            </p>
+          </div>
+        </div>
+        
+
+        <div class="update-row">
+          <div class="update-date"> MAY 2025</div>
+          <div class="update-body">
+            <p>
+              🏅 Received the HCIL Maryland Way Award (Honorable Mention for Research Excellence, $250). 
+            </p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">MAR 2025</div>
+          <div class="update-body">
+            <p>🎉 Had two full papers accepted to <a href="https://chi2025.acm.org/">CHI 2025</a>!
+              <!-- <em>“<a href="https://programs.sigchi.org/chi/2025/program/content/188446" target="_blank">Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns</a>”</em>
+              (with Amanda Lazar) and
+              <em>“<a href="https://programs.sigchi.org/chi/2025/program/content/189508" target="_blank">Tracking and its Potential for Older Adults with Memory Concerns</a>”</em>
+              (with amazing collaborators including Amelia Short, Norman Makoto Su, Eun Kyoung Choe, Hernisa Kacorri, Margaret Danilovich, David E. Conroy, Shannon Jette, Beth Barnett, and Amanda Lazar). -->
+            </p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">MAR 2025</div>
+          <div class="update-body">
+            <p>Invited to share my research at Professor <a href="https://ischool.umd.edu/directory/ge-gao/" target="_blank">Ge Gao</a>'s lab: <em>“Supporting Meaningful Activities While Navigating Aging and Cognitive Changes.”</em></p>
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date">FEB 2025</div>
+          <div class="update-body">
+            <p>Invited Panelist for INST 802 at the University of Maryland, hosted by Prof. Sheena Erete, discussing academic writing and research development with doctoral students.</p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">FEB 2025</div>
+          <div class="update-body">
+            <p>Invited to give a talk at <a href="https://columbiahci.github.io/#" target="_blank">Columbia HCI</a>: <em>“Exploring Videoconferencing Technology Use While Navigating Aging and Cognitive Changes.”</em></p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">JAN 2025</div>
+          <div class="update-body">
+            <p>Attended <a href="https://www.atia.org/precon/" target="_blank">ATIA 2025 Pre-Conference</a> in Orlando, FL - such an energizing start to the year!</p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">NOV 2024</div>
+          <div class="update-body">
+            <p>Presented first-authored paper at CSCW 2024 (San José, Costa Rica): <em>“<a href="https://dl.acm.org/doi/10.1145/3637401" target="_blank">Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources</a>”</em></p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">OCT 2024</div>
+          <div class="update-body">
+            <p>Presented first-authored paper at ASSETS 2024 (St. John’s, Canada): <em>“<a href="https://dl.acm.org/doi/10.1145/3663548.3675647" target="_blank">Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens</a>.”</em></p>
+          </div>
+        </div>
+      
+        <div class="update-row">
+          <div class="update-date">JUN 2024</div>
+          <div class="update-body">
+            <p>🎉 Had VL/HCC full paper accepted (with Daniel Manesh, Marx Wang, Sang Won Lee): <em>“<a href="https://ieeexplore.ieee.org/abstract/document/10714540" target="_blank">Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript</a>.”</em></p>
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date">JUN 2024</div>
+          <div class="update-body">
+            <p>🎉 Had one full paper accepted to <a href="https://assets24.sigaccess.org/" target="_blank">ASSETS 2024</a>!
+            </p>
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date">SEP 2023</div>
+          <div class="update-body">
+            <p>🎉 Had one full paper accepted to <a href="https://cscw.acm.org/2024/" target="_blank">CSCW 2024</a>!
+            </p>
+          </div>
+        </div>
+      
+      </div>
     </div>
+
+    <div class="news-section" id="publications">
+      <h2>PUBLICATIONS</h2>
+    
+      <div class="updates">
+    
+        <!-- 2026 -->
+        <div class="update-row">
+          <div class="update-date">2026</div>
+          <div class="update-body pub-item">
+            <p>
+              <strong>Ruipu Hu</strong>, Eun Kyoung Choe, and Amanda Lazar.
+              <em>Looking Beyond the Screen to Study the Technology Use of Older People Experiencing Cognitive Concerns.</em>
+              <span class="venue">ACM CHI ’26. Condtionally Accepted.</span>
+            </p>
+          </div>
+        </div>
+    
+        <div class="update-row">
+          <div class="update-date"></div>
+          <div class="update-body pub-item">
+            <p>
+              Amanda Lazar, Elissa Carpio, <strong>Ruipu Hu</strong>, Beth Barnett, Kibron Tesfatsion, and Sheena Erete.
+              <em>Interrogating the “Us” Versus “Them” Dichotomy in Technology Research with Older Adults.</em>
+              <span class="venue">ACM CHI ’26. Condtionally Accepted.</span>
+            </p>
+          </div>
+        </div>
+    
+        <!-- 2025 -->
+        <div class="update-row">
+          <div class="update-date">2025</div>
+          <div class="update-body pub-item">
+            <p>
+              <strong>Ruipu Hu</strong> and Amanda Lazar.
+              <em>Surfacing Technology Routines While Studying Videoconferencing Among Older Adults with Cognitive Concerns.</em>
+              <span class="venue">ACM CHI ’25.</span>
+              <a href="https://dl.acm.org/doi/full/10.1145/3706598.3714207" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="update-row">
+          <div class="update-date"></div>
+          <div class="update-body pub-item">
+            <p>
+              Amelia Short, Norman Makoto Su, <strong>Ruipu Hu</strong>, Eun Kyoung Choe, Hernisa Kacorri, Margaret Danilovich,
+              David E. Conroy, Shannon Jette, Beth Barnett, and Amanda Lazar.
+              <em>Tracking and its Potential for Older Adults with Memory Concerns.</em>
+              <span class="venue">ACM CHI ’25.</span>
+              <a href="https://dl.acm.org/doi/pdf/10.1145/3706598.3714093" target="_blank">[PDF]</a>
+              <span class="tag">🏆 Best Paper Award.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="update-row">
+          <div class="update-date empty"></div>
+          <div class="update-body pub-item">
+            <p>
+              Ajit G. Pillai, Renxuan Liu, Jung-Joo Lee, Janghee Cho, Insun Baek, Adrian Choi,
+              Kevin Doherty, Christopher Ferguson, <strong>Ruipu Hu</strong>, Sarah Kettley,
+              Seonghoon Kim, Jiashuo Liu, Tse Pei Ng, Adrian Petterson, Matt Ratto,
+              Celeste Seah, Yiming Yao, and Yiying Wu.
+              <em>Speculating and Disentangling the Relationship Between Technology and Care Work.</em>
+              <span class="venue">ACM DIS ’25 Companion.</span>
+              <a href="https://doi.org/10.1145/3715668.3736364" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <!-- 2024 -->
+        <div class="update-row">
+          <div class="update-date">2024</div>
+          <div class="update-body pub-item">
+            <p>
+              <strong>Ruipu Hu</strong>, Ge Gao, and Amanda Lazar.
+              <em>Exploring Videoconferencing for Older Adults with Cognitive Concerns Using a Dramaturgical Lens.</em>
+              <span class="venue">ACM ASSETS ’24.</span>
+              <a href="https://dl.acm.org/doi/pdf/10.1145/3663548.3675647" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="update-row">
+          <div class="update-date"></div>
+          <div class="update-body pub-item">
+            <p>
+              <strong>Ruipu Hu</strong>, Alisha Pradhan, Elizabeth Bonsignore, and Amanda Lazar.
+              <em>Sustaining the Usefulness and Appeal of an Older Adult-led Makerspace through Developing and Adapting Resources.</em>
+              <span class="venue">PACM HCI (CSCW ’24).</span>
+              <a href="https://dl.acm.org/doi/pdf/10.1145/3637401" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="update-row">
+          <div class="update-date"></div>
+          <div class="update-body pub-item">
+            <p>
+              Daniel Manesh, Marx Boyuan Wang, <strong>Ruipu Hu</strong>, and Sang Won Lee.
+              <em>Beyond TAP: Piggybacking on IFTTT to Connect Triggers and Actions with JavaScript.</em>
+              <span class="venue">IEEE VL/HCC ’24.</span>
+              <a href="https://ieeexplore.ieee.org/document/10714540" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <div class="update-row">
+          <div class="update-date"></div>
+          <div class="update-body pub-item">
+            <p>
+              <strong>Ruipu Hu</strong>, Nancy Roderer, and Amanda Lazar.
+              <em>Studying Older Adults’ Perceptions on AI Through AI Lectures.</em>
+              <span class="venue">MobiCom4AgeTech ’24.</span>
+              <a href="https://mobicom4agetech.github.io/2024/docs/abstract001.pdf" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <!-- 2022 -->
+        <div class="update-row">
+          <div class="update-date">2022</div>
+          <div class="update-body pub-item">
+            <p>
+              Marx Boyuan Wang, Daniel Manesh, <strong>Ruipu Hu</strong>, and Sang Won Lee.
+              <em>IThem: Programming Internet of Things Beyond Trigger-Action Pattern.</em>
+              <span class="venue">UIST ’22 Adjunct.</span>
+              <a href="https://vtechworks.lib.vt.edu/server/api/core/bitstreams/69dfc6ce-cef3-437c-bc04-83de42d36150/content" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+        <!-- 2020 -->
+        <div class="update-row">
+          <div class="update-date">2020</div>
+          <div class="update-body pub-item">
+            <p>
+              Amber Aftab, <strong>Ruipu Hu</strong>, and Sang Won Lee.
+              <em>Remo: Generating Interactive Tutorials by Demonstration for Online Tasks.</em>
+              <span class="venue">UIST ’20 Adjunct.</span>
+              <a href="https://echolab.cs.vt.edu/wp-content/uploads/sites/105/2024/05/UIST2020_Remo__poster_-2.pdf" target="_blank">[PDF]</a>
+            </p>
+          </div>
+        </div>
+    
+      </div>
+    </div>
+    
   </main>
 
   <footer>
-    © 2025 Ruipu Hu
+    © 2026 Ruipu Hu
   </footer>
 
 </body>
