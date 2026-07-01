@@ -18,7 +18,7 @@
       --border: #e6e6e6;
       --link: #111111;
       --link-hover: #000000;
-      --maxw: 980px;
+      --maxw: 1350px;
     }
   
     * { box-sizing: border-box; }
@@ -38,7 +38,7 @@
 
   
     /* ====== Links ====== */
-    a{
+    /* a{
       color: var(--link);
       text-decoration: underline;
       text-underline-offset: 3px;
@@ -47,6 +47,18 @@
     a:hover{
       color: var(--link-hover);
       text-decoration-thickness: 2px;
+    } */
+
+    a{
+      color:#5f5a96;
+      text-decoration:underline;
+      text-decoration-thickness:1px;
+      text-underline-offset:3px;
+    }
+
+    a:hover{
+      color:#3d3774;
+      text-decoration-thickness:1px;
     }
   
     /* ====== Top Nav (black/white) ====== */
@@ -114,7 +126,7 @@
       padding-top: 92px;
     }
   
-    /* ====== Layout ====== */
+    /* ====== Layout ======
     .container{
       max-width: var(--maxw);
       margin: 0 auto;
@@ -123,10 +135,19 @@
       grid-template-columns: 180px 1fr; 
       gap: 40px; 
       align-items: start;
-    }
+    } */
+
+    .container{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 28px 24px 12px 24px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 50px;
+  align-items: start;
+}
 
   
-    /* Left profile card -> now clean, no blue box */
     .profile{
       padding: 0;
       background: transparent;
@@ -134,25 +155,37 @@
       margin-right: 0;
       box-shadow: none;
       border: none;
-      display: flex;         
+      display: flex;
       flex-direction: column;
-      align-items: center;      
-      text-align: center;     
+      align-items: flex-start;
+      text-align: right;
     }
-  
-    .profile img{
-      width: 210px;
-      height: 210px;
+    /* .profile img{
+      width: 300px;
+      height: 300px;
       object-fit: cover;
       object-position: top center;
       border-radius: 14px; 
       margin-bottom: 14px;
       border: 1px solid var(--border);
+    } */
+
+    .profile img{
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 6px;
+      margin-bottom: 18px;
+      border: none;
     }
   
     .profile p{
       margin: 0 0 14px 0;
       color: var(--muted);
+      text-align:right;
+      width:100%;
+
     }
   
     /* icon row: make it minimal & black */
@@ -161,18 +194,41 @@
     }
 
     /* === Center social icons under the photo === */
-    .profile .social-icons {
+    /* .profile .social-icons {
       display: flex;
       justify-content: center;   
       align-items: center;
       gap: 14px;
       margin-top: 12px;
+    } */
+
+    .profile .social-icons{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+
+    gap:10px;
+    margin-top:12px;
+    width:100%;
+
+    }
+
+  .profile .social-icons a{
+    color:#5f5a96;
+    text-decoration:underline;
+    text-decoration-thickness:1px;
+    text-underline-offset:3px;
+    font-size:20px;
+    }
+
+  .profile .social-icons a:hover{
+    color:#3d3774;
     }
 
 
-    .profile a{
+    /* .profile a{
       text-decoration: none;
-    }
+    } */
     .profile a:hover i{
       color: #000;
     }
@@ -386,19 +442,22 @@
   <div class="container" id="home">
   <div class="profile">
      <img src="https://ischool.umd.edu/wp-content/uploads/Ruipu-Hu-Headshot-Frame.jpg" alt="ruipu's figure">
-    <p>Ph.D. candidate<br>University of Maryland's iSchool</p>
+    <p>PhD Candidate<br>University of Maryland<br>College of Information</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin fa-lg"></i>
+        LinkedIn
+        <!-- <i class="fab fa-linkedin fa-lg"></i> -->
       </a>
-      <a href="https://x.com/HuRuipu" target="_blank" title="X">
-        <i class="fab fa-x-twitter fa-lg"></i>
-      </a>
+
+     
+
       <a href="https://scholar.google.com/citations?user=E8vCAyIAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
-        <i class="fas fa-graduation-cap fa-lg"></i>
+        <!-- <i class="fas fa-graduation-cap fa-lg"></i> -->
+        Google Scholar
       </a>
       <a href="mailto:rhu12@umd.edu" title="Email">
-        <i class="fas fa-envelope fa-lg"></i>
+        <!-- <i class="fas fa-envelope fa-lg"></i> -->
+         rhu12@umd.edu
       </a>
     </div>
   </div>
@@ -407,19 +466,57 @@
 
       <div class="about">
         <p>
-          Hi！I am a PhD candidate at the University of Maryland’s College of Information (iSchool), advised by Professor <a href="https://ischool.umd.edu/directory/amanda-lazar/" target="_blank">Amanda Lazar</a>
-          at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.  I expect to receive my PhD in May 2026. My research appears or is under review at premier HCI venues including ACM CHI, CSCW, ASSETS, and UIST, and has been recognized with a Best Paper Award at CHI 2025. Prior to my PhD, I earned a B.S. in Computer Science from Virginia Tech, where I worked with Professor <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Sang Won Lee</a> to design interactive systems that facilitate empathy among users.
+          Hi！I am a PhD candidate at the University of Maryland’s College of Information (iSchool), advised by Professor <a href="https://amandalazar.net/" target="_blank">Amanda Lazar</a>
+          at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.  I expect to receive my PhD in May 2026. 
+          My research has appeared at premier HCI venues including ACM CHI, CSCW, ASSETS, and UIST, and has been recognized with a Best Paper Award at CHI 2025 and a Best Paper Honorable Mention at CHI 2026.
+          Prior to my PhD, I earned a B.S. in Computer Science from Virginia Tech, where I worked with Professor <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Sang Won Lee</a> to design interactive systems that facilitate empathy among users.
         </p>
-       <p style="color: #c1121f; font-weight: bold;">
+       <!-- <p style="color: #c1121f; font-weight: bold;">
          I am currently on the academic job market for assistant professor positions and postdoctoral opportunities. I welcome any conversations or opportunities :)
-       </p>
+       </p> -->
 
         <P>
           My research is in the field of Human-Computer Interaction (HCI), drawing on and contributing to CSCW, and focuses on understanding how to best design technologies for groups often overlooked in technology design. In my graduate and undergraduate training, I have largely focused on designing with <b>older adults and people with disabilities such as those with cognitive impairments</b>. In working with this particular group, I found an <b>assets-based perspective</b> especially helpful for showing the research community the strengths that people already bring to technology use.
         </P>
 
+        <div style="
+        margin:20px 0;
+        padding:18px 22px;
+        background:#fafafa;
+        border:1px solid #e6e6e6;
+        border-radius:12px;
+        ">
+
+        <h2 style="margin-top:0;">My research expands our understanding of what technology needs to see about older adults to work in their lives by</h2>
+
+        <!-- <p style="margin-bottom:16px;">
+        My research expands our understanding of what technology needs to see about older adults to work in their lives.
+        </p> -->
+
+        <p>
+        <b>1. Challenging deficit-based participation with technology</b><br>
+        I study how older adults are not passive users of technology, but actively take on and sustain meaningful roles through technology use.
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3663548.3675647" target="_blank"> Dramaturgical Videoconferencing (ASSETS 2024)</a> ·
+        <a href="https://dl.acm.org/doi/pdf/10.1145/3637401" target="_blank"> Sustaining Makerspace (CSCW 2024)</a>
+        </p>
+
+        <p>
+        <b>2. Analyzing everyday life to reveal resources</b><br>
+        I examine the resources that older adults, especially those experiencing cognitive concerns, already draw upon in their everyday lives, such as routines and objects, that are less recognized and supported in design.
+        <a href="https://dl.acm.org/doi/full/10.1145/3706598.3714207" target="_blank">Technology Routines (CHI 2025)</a> ·
+        <a href="https://dl.acm.org/doi/10.1145/3772318.3790526" target="_blank"> Objects Beyond the Interface (CHI 2026)</a>  
+        </p>
+
+        <p>
+        <b>3. Reframing technology problems as design opportunities</b><br>
+        I investigate how technology breakdowns emerge within everyday life and how existing resources can be leveraged to support participation.
+        <a href="#publications">Ongoing Project</a>
+        </p>
+
+        </div>
+
         <P>
-          Specifically, I <b>draw on theories</b> that highlight the skills of typical populations but have rarely been applied to the populations I work with, such as Goffman’s dramaturgy and distributed cognition. Similarly, I <b>adapt methods</b> to make them accessible to people with cognitive impairments. Doing so has <b>informed technology design</b> and, when more appropriate for this population, <b>low-tech solutions</b> such as paper manuals and low-fidelity prototypes.
+          Specifically, I <b>draw on theories</b> that highlight the skills of typical populations but have rarely been applied to the populations I work with, such as Goffman’s dramaturgy and distributed cognition. Similarly, I <b>adapt methods</b> to make them accessible to people with cognitive impairments. Doing so has <b>informed technology design</b> and, when more appropriate for this population, low-tech solutions such as paper manuals and low-fidelity prototypes.
         </P>
          
       </div>
