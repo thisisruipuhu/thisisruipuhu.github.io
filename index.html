@@ -263,6 +263,93 @@
       border-radius: 12px;
     }
   
+    /* ====== Research lines ====== */
+    .research-overview{
+      margin-top: 28px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+
+    .research-overview h2{
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+
+    .research-intro{
+      color: var(--muted);
+      max-width: 880px;
+      margin-bottom: 28px !important;
+    }
+
+    .research-grid{
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin-bottom: 28px;
+    }
+
+    .research-line{
+      padding: 0 26px;
+      border-left: 1px solid var(--border);
+    }
+
+    .research-line:first-child{
+      padding-left: 0;
+      border-left: 0;
+    }
+
+    .research-line:last-child{
+      padding-right: 0;
+    }
+
+    .research-lens{
+      display: block;
+      margin-bottom: 10px;
+      color: #5f5a96;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .research-line h3{
+      min-height: 2.5em;
+      margin: 0 0 12px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .research-line > p{
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .research-papers{
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .research-papers li{
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .research-papers a,
+    .research-paper{
+      color: var(--text);
+      text-decoration-color: #b7b3d0;
+    }
+
+    .research-meta{
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
     /* ====== News ====== */
     .news-section{
       max-width: var(--maxw);
@@ -404,6 +491,23 @@
         width: 180px;
         height: 180px;
       }
+      .research-grid{
+        grid-template-columns: 1fr;
+      }
+      .research-line,
+      .research-line:first-child,
+      .research-line:last-child{
+        padding: 24px 0;
+        border-left: 0;
+        border-top: 1px solid var(--border);
+      }
+      .research-line:first-child{
+        padding-top: 0;
+        border-top: 0;
+      }
+      .research-line h3{
+        min-height: auto;
+      }
       nav .nav-content{
         align-items: flex-start;
         flex-direction: column;
@@ -429,6 +533,7 @@
       </div>
       <div class="nav-links">
         <a href="#home">Home</a>
+        <a href="#research">Research</a>
         <a href="#news">News</a>
         <!-- <a href="#projects">Projects</a> -->
         <a href="#publications">Publications</a>
@@ -442,7 +547,7 @@
   <div class="container" id="home">
   <div class="profile">
      <img src="https://ischool.umd.edu/wp-content/uploads/Ruipu-Hu-Headshot-Frame.jpg" alt="ruipu's figure">
-    <p>PhD Candidate<br>University of Maryland<br>College of Information</p>
+    <p>HCI Researcher<br>Ph.D., University of Maryland<br>College of Information</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank" title="LinkedIn">
         LinkedIn
@@ -466,63 +571,60 @@
 
       <div class="about">
         <p>
-          Hi！I am a PhD candidate at the University of Maryland’s College of Information (iSchool), advised by Professor <a href="https://amandalazar.net/" target="_blank">Amanda Lazar</a>
-          at <a href="https://thatlab.umd.edu/People.html" target="_blank">The Health Aging and Technology (THAT) Lab</a>.  I expect to receive my PhD in May 2026. 
-          My research has appeared at premier HCI venues including ACM CHI, CSCW, ASSETS, and UIST, and has been recognized with a Best Paper Award at CHI 2025 and a Best Paper Honorable Mention at CHI 2026.
-          Prior to my PhD, I earned a B.S. in Computer Science from Virginia Tech, where I worked with Professor <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Sang Won Lee</a> to design interactive systems that facilitate empathy among users.
-        </p>
-       <!-- <p style="color: #c1121f; font-weight: bold;">
-         I am currently on the academic job market for assistant professor positions and postdoctoral opportunities. I welcome any conversations or opportunities :)
-       </p> -->
-
-        <P>
-          My research is in the field of Human-Computer Interaction (HCI), drawing on and contributing to CSCW, and focuses on understanding how to best design technologies for groups often overlooked in technology design. In my graduate and undergraduate training, I have largely focused on designing with <b>older adults and people with disabilities such as those with cognitive impairments</b>. In working with this particular group, I found an <b>assets-based perspective</b> especially helpful for showing the research community the strengths that people already bring to technology use.
-        </P>
-
-        <div style="
-        margin:20px 0;
-        padding:18px 22px;
-        background:#fafafa;
-        border:1px solid #e6e6e6;
-        border-radius:12px;
-        ">
-
-        <h2 style="margin-top:0;">My research expands our understanding of what technology needs to see about older adults to work in their lives by</h2>
-
-        <!-- <p style="margin-bottom:16px;">
-        My research expands our understanding of what technology needs to see about older adults to work in their lives.
-        </p> -->
-
-        <p>
-        <b>1. Challenging deficit-based participation with technology</b><br>
-        I study how older adults are not passive users of technology, but actively take on and sustain meaningful roles through technology use.
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3663548.3675647" target="_blank"> Dramaturgical Videoconferencing (ASSETS 2024)</a> ·
-        <a href="https://dl.acm.org/doi/pdf/10.1145/3637401" target="_blank"> Sustaining Makerspace (CSCW 2024)</a>
+          I defended my Ph.D. in Information Studies in September 2026 at the University of Maryland, College Park, where I was advised by Professor <a href="https://amandalazar.net/" target="_blank">Amanda Lazar</a>. Prior to my Ph.D., I earned a B.S. in Computer Science from Virginia Tech, where I worked with Professor <a href="https://echolab.cs.vt.edu/sangwonlee/" target="_blank">Sang Won Lee</a> to design interactive systems that facilitate empathy among users.
         </p>
 
         <p>
-        <b>2. Analyzing everyday life to reveal resources</b><br>
-        I examine the resources that older adults, especially those experiencing cognitive concerns, already draw upon in their everyday lives, such as routines and objects, that are less recognized and supported in design.
-        <a href="https://dl.acm.org/doi/full/10.1145/3706598.3714207" target="_blank">Technology Routines (CHI 2025)</a> ·
-        <a href="https://dl.acm.org/doi/10.1145/3772318.3790526" target="_blank"> Objects Beyond the Interface (CHI 2026)</a>  
+          My research takes a sociotechnical perspective to understand and advance equitable technology design, particularly for people whose experiences, capacities, and perspectives have historically been marginalized. I examine how assumptions about people shape technology design, how people experience and use technologies in everyday life, and how they can meaningfully influence design decisions. I draw on qualitative, ethnographic, and participatory approaches to pursue these questions.
         </p>
 
         <p>
-        <b>3. Reframing technology problems as design opportunities</b><br>
-        I investigate how technology breakdowns emerge within everyday life and how existing resources can be leveraged to support participation.
-        <a href="#publications">Ongoing Project</a>
+          My research has been published at ACM CHI, CSCW, and ASSETS. My collaborative work received a CHI 2025 Best Paper Award and a CHI 2026 Best Paper Honorable Mention, along with recognition for research excellence from the HCIL Maryland Way Award.
         </p>
 
-        </div>
+        <section class="research-overview" id="research" aria-labelledby="research-title">
+          <h2 id="research-title">Lines of My Research</h2>
+          <p class="research-intro">Across these lines of work, I study the values embedded in technologies, the realities of technology use, and the conditions under which people can shape design.</p>
 
-        <P>
-          Specifically, I <b>draw on theories</b> that highlight the skills of typical populations but have rarely been applied to the populations I work with, such as Goffman’s dramaturgy and distributed cognition. Similarly, I <b>adapt methods</b> to make them accessible to people with cognitive impairments. Doing so has <b>informed technology design</b> and, when more appropriate for this population, low-tech solutions such as paper manuals and low-fidelity prototypes.
-        </P>
-         
+          <div class="research-grid">
+            <article class="research-line">
+              <span class="research-lens">Critical &amp; Conceptual</span>
+              <h3>Perspectives in Technology Design</h3>
+              <p>I critically examine how assumptions, values, and dominant ways of knowing become embedded in technology design—and whose perspectives are centered or excluded as a result.</p>
+              <ul class="research-papers">
+                <li><a href="https://doi.org/10.1145/3772318.3791086" target="_blank">“Us” Versus “Them” in Technology Research</a> <span class="research-meta">(CHI 2026, Honorable Mention)</span></li>
+                <li><span class="research-paper">Looking Inward in Aging HCI</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><a href="https://doi.org/10.1145/3663548.3675647" target="_blank">Dramaturgical Videoconferencing</a> <span class="research-meta">(ASSETS 2024)</span></li>
+              </ul>
+            </article>
+
+            <article class="research-line">
+              <span class="research-lens">Empirical</span>
+              <h3>Technology in Everyday Life</h3>
+              <p>I investigate how people encounter, interpret, adapt, and sometimes resist technologies in everyday life, with close attention to lived experience and social relationships.</p>
+              <ul class="research-papers">
+                <li><a href="https://doi.org/10.1145/3706598.3714207" target="_blank">Technology Routines</a> <span class="research-meta">(CHI 2025)</span></li>
+                <li><a href="https://doi.org/10.1145/3772318.3790526" target="_blank">Looking Beyond the Screen</a> <span class="research-meta">(CHI 2026)</span></li>
+                <li><a href="https://doi.org/10.1145/3706598.3714093" target="_blank">Tracking and Memory Concerns</a> <span class="research-meta">(CHI 2025, Best Paper)</span></li>
+                <li><a href="https://doi.org/10.1145/3637401" target="_blank">Older Adult-led Makerspace</a> <span class="research-meta">(CSCW 2024)</span></li>
+              </ul>
+            </article>
+
+            <article class="research-line">
+              <span class="research-lens">Methodological &amp; Design</span>
+              <h3>Participation in Technology Design</h3>
+              <p>I develop methods and design practices that enable people to question researchers’ interpretations and meaningfully shape design decisions.</p>
+              <ul class="research-papers">
+                <li><span class="research-paper">Story Rewriting</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><a href="https://doi.org/10.1145/3379350.3416194" target="_blank">Interactive Tutorials by Demonstration</a> <span class="research-meta">(UIST 2020 Adjunct)</span></li>
+                <li><span class="research-paper">Augmenting Existing Interfaces</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><a href="https://mobicom4agetech.github.io/2024/docs/abstract001.pdf" target="_blank">Older Adults’ Perspectives on AI</a> <span class="research-meta">(MobiCom4AgeTech 2024)</span></li>
+              </ul>
+            </article>
+          </div>
+        </section>
       </div>
     </div>
-
-    
 
 
     <div class="news-section" id="news">
