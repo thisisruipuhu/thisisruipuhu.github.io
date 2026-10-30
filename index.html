@@ -18,7 +18,7 @@
       --border: #e6e6e6;
       --link: #111111;
       --link-hover: #000000;
-      --maxw: 1350px;
+      --maxw: 1200px;
     }
   
     * { box-sizing: border-box; }
@@ -70,13 +70,13 @@
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
-      padding: 14px 24px;
+      padding: 16px 24px;
       z-index: 1000;
     }
   
     nav .nav-content{
       width: 100%;
-      max-width: var(--maxw);
+      max-width: calc(var(--maxw) - 48px);
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -85,9 +85,10 @@
     }
   
     nav .logo a{
-      font-weight: 800;
-      font-size: 50px;
-      letter-spacing: 0.4px;
+      color: #20201e;
+      font-weight: 600;
+      font-size: 34px;
+      letter-spacing: -0.6px;
       text-decoration: none;
     }
 
@@ -123,7 +124,7 @@
   
     main{
       flex: 1;
-      padding-top: 92px;
+      padding-top: 82px;
     }
   
     /* ====== Layout ======
@@ -137,13 +138,13 @@
       align-items: start;
     } */
 
-    .container{
+.container{
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 28px 24px 12px 24px;
+  padding: 42px 24px 20px 24px;
   display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 50px;
+  grid-template-columns: 250px 1fr;
+  gap: 54px;
   align-items: start;
 }
 
@@ -158,7 +159,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      text-align: right;
+      text-align: left;
     }
     /* .profile img{
       width: 300px;
@@ -171,20 +172,20 @@
     } */
 
     .profile img{
-      width: 300px;
-      height: 300px;
+      width: 220px;
+      height: 220px;
       object-fit: cover;
       object-position: center top;
-      border-radius: 6px;
-      margin-bottom: 18px;
+      border-radius: 4px;
+      margin-bottom: 20px;
       border: none;
     }
   
     .profile p{
       margin: 0 0 14px 0;
       color: var(--muted);
-      text-align:right;
-      width:100%;
+      text-align:left;
+      width:220px;
 
     }
   
@@ -205,11 +206,11 @@
     .profile .social-icons{
     display:flex;
     flex-direction:column;
-    align-items:flex-end;
+    align-items:flex-start;
 
     gap:10px;
     margin-top:12px;
-    width:100%;
+    width:220px;
 
     }
 
@@ -218,7 +219,7 @@
     text-decoration:underline;
     text-decoration-thickness:1px;
     text-underline-offset:3px;
-    font-size:20px;
+    font-size:16px;
     }
 
   .profile .social-icons a:hover{
@@ -289,17 +290,12 @@
     }
 
     .research-line{
-      padding: 0 26px;
+      padding: 0 22px;
       border-left: 1px solid var(--border);
     }
 
     .research-line:first-child{
-      padding-left: 0;
       border-left: 0;
-    }
-
-    .research-line:last-child{
-      padding-right: 0;
     }
 
     .research-lens{
@@ -390,6 +386,16 @@
       line-height: 1.65; 
     }
 
+    #news .update-body{
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    #publications .update-body{
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
     .update-body p{
       margin: 0;
     }
@@ -468,6 +474,11 @@
   font-weight: 700;
 }
 
+.award-tag{
+  color: #b21f5b;
+  font-weight: 700;
+}
+
   
 
 
@@ -490,6 +501,10 @@
       .profile img{
         width: 180px;
         height: 180px;
+      }
+      .profile p,
+      .profile .social-icons{
+        width: 180px;
       }
       .research-grid{
         grid-template-columns: 1fr;
@@ -537,7 +552,7 @@
         <a href="#news">News</a>
         <!-- <a href="#projects">Projects</a> -->
         <a href="#publications">Publications</a>
-        <a href="Ruipu Hu_CV_Aug 11.pdf" target="_blank">CV</a>
+        <a href="Hu_Curriculum_Vitae.pdf" target="_blank">CV</a>
       </div>
     </div>
   </nav>
@@ -546,7 +561,7 @@
   <main>
   <div class="container" id="home">
   <div class="profile">
-     <img src="https://ischool.umd.edu/wp-content/uploads/Ruipu-Hu-Headshot-Frame.jpg" alt="ruipu's figure">
+     <img src="IMG_1118.jpg" alt="Portrait of Ruipu Hu">
     <p>HCI Researcher<br>Ph.D., University of Maryland<br>College of Information</p>
     <div class="social-icons">
       <a href="https://www.linkedin.com/in/ruipuhu/" target="_blank" title="LinkedIn">
@@ -575,16 +590,15 @@
         </p>
 
         <p>
-          My research takes a sociotechnical perspective to understand and advance equitable technology design, particularly for people whose experiences, capacities, and perspectives have historically been marginalized. I examine how assumptions about people shape technology design, how people experience and use technologies in everyday life, and how they can meaningfully influence design decisions. I draw on qualitative, ethnographic, and participatory approaches to pursue these questions.
+          My research takes a sociotechnical perspective to <strong>understand and advance equitable technology design</strong>, particularly for people whose experiences, capacities, and perspectives have historically been marginalized. To date, my research has focused on older adults and people experiencing cognitive concerns. I examine how <strong>assumptions about people</strong> shape technology design, how people <strong>experience and use technologies in everyday life</strong>, and how they can <strong>meaningfully influence design decisions</strong>. I draw on qualitative, ethnographic, and participatory approaches to pursue these questions.
         </p>
 
         <p>
           My research has been published at ACM CHI, CSCW, and ASSETS. My collaborative work received a CHI 2025 Best Paper Award and a CHI 2026 Best Paper Honorable Mention, along with recognition for research excellence from the HCIL Maryland Way Award.
         </p>
 
-        <section class="research-overview" id="research" aria-labelledby="research-title">
-          <h2 id="research-title">Lines of My Research</h2>
-          <p class="research-intro">Across these lines of work, I study the values embedded in technologies, the realities of technology use, and the conditions under which people can shape design.</p>
+        <section class="research-overview" id="research" aria-label="Research overview">
+          <p class="research-intro">A few recurring themes in my research are:</p>
 
           <div class="research-grid">
             <article class="research-line">
@@ -593,7 +607,7 @@
               <p>I critically examine how assumptions, values, and dominant ways of knowing become embedded in technology design—and whose perspectives are centered or excluded as a result.</p>
               <ul class="research-papers">
                 <li><a href="https://doi.org/10.1145/3772318.3791086" target="_blank">“Us” Versus “Them” in Technology Research</a> <span class="research-meta">(CHI 2026, Honorable Mention)</span></li>
-                <li><span class="research-paper">Looking Inward in Aging HCI</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><span class="research-paper">Looking Inward in Aging HCI</span> <span class="research-meta">(under review)</span></li>
                 <li><a href="https://doi.org/10.1145/3663548.3675647" target="_blank">Dramaturgical Videoconferencing</a> <span class="research-meta">(ASSETS 2024)</span></li>
               </ul>
             </article>
@@ -615,9 +629,9 @@
               <h3>Participation in Technology Design</h3>
               <p>I develop methods and design practices that enable people to question researchers’ interpretations and meaningfully shape design decisions.</p>
               <ul class="research-papers">
-                <li><span class="research-paper">Story Rewriting</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><span class="research-paper">Story Rewriting</span> <span class="research-meta">(under review)</span></li>
                 <li><a href="https://doi.org/10.1145/3379350.3416194" target="_blank">Interactive Tutorials by Demonstration</a> <span class="research-meta">(UIST 2020 Adjunct)</span></li>
-                <li><span class="research-paper">Augmenting Existing Interfaces</span> <span class="research-meta">(CHI 2027, under review)</span></li>
+                <li><span class="research-paper">Augmenting Existing Interfaces</span> <span class="research-meta">(under review)</span></li>
                 <li><a href="https://mobicom4agetech.github.io/2024/docs/abstract001.pdf" target="_blank">Older Adults’ Perspectives on AI</a> <span class="research-meta">(MobiCom4AgeTech 2024)</span></li>
               </ul>
             </article>
@@ -633,9 +647,17 @@
 
 
         <div class="update-row">
+          <div class="update-date">OCT 2026</div>
+          <div class="update-body">
+            <p>On October 27, I joined Professor <a href="https://ischool.umd.edu/directory/keke-wu/" target="_blank">Keke Wu</a>’s <em>Design Research Methods for Interactive Systems</em> course as a guest speaker and facilitator. I answered students’ questions about two of my design research papers, including how I developed the research questions, made and operationalized design decisions, and used data to answer those questions. I also offered feedback on their ongoing projects, helping them understand design as a form of inquiry in Human-Computer Interaction.</p>
+          </div>
+        </div>
+
+
+        <div class="update-row">
           <div class="update-date">MAR 2026</div>
           <div class="update-body">
-            <p>Invited panalist for to share experiences in community-based research with graduate students, hosted by Prof. Sheena Erete.</p>
+            <p>Invited panelist to share experiences in community-based research with graduate students, hosted by Professor <a href="https://ischool.umd.edu/directory/sheena-erete/" target="_blank">Sheena Erete</a>.</p>
           </div>
         </div>
 
@@ -661,7 +683,7 @@
         <div class="update-row">
           <div class="update-date">NOV 2025</div>
           <div class="update-body">
-            <p>Invited Panelist for “A Panel on Graduate School” at the University of Maryland, hosted by Prof. Eun Kyoung Choe, sharing PhD experiences with undergraduate students.</p>
+            <p>Invited Panelist for “A Panel on Graduate School” at the University of Maryland, hosted by Professor <a href="https://ischool.umd.edu/directory/eun-kyoung-choe/" target="_blank">Eun Kyoung Choe</a>, sharing PhD experiences with undergraduate students.</p>
           </div>
         </div>
 
@@ -792,7 +814,8 @@
             <p>
               <strong>Ruipu Hu</strong>, Eun Kyoung Choe, and Amanda Lazar.
               <em>Looking Beyond the Screen to Study the Technology Use of Older People Experiencing Cognitive Concerns.</em>
-              <span class="venue">ACM CHI ’26. Condtionally Accepted.</span>
+              <span class="venue">ACM CHI ’26.</span>
+              <a href="https://doi.org/10.1145/3772318.3790526" target="_blank">[PDF]</a>
             </p>
           </div>
         </div>
@@ -803,7 +826,9 @@
             <p>
               Amanda Lazar, Elissa Carpio, <strong>Ruipu Hu</strong>, Beth Barnett, Kibron Tesfatsion, and Sheena Erete.
               <em>Interrogating the “Us” Versus “Them” Dichotomy in Technology Research with Older Adults.</em>
-              <span class="venue">ACM CHI ’26. Condtionally Accepted.</span>
+              <span class="venue">ACM CHI ’26.</span>
+              <a href="https://doi.org/10.1145/3772318.3791086" target="_blank">[PDF]</a>
+              <span class="award-tag">🏆 Honorable Mention.</span>
             </p>
           </div>
         </div>
@@ -830,7 +855,7 @@
               <em>Tracking and its Potential for Older Adults with Memory Concerns.</em>
               <span class="venue">ACM CHI ’25.</span>
               <a href="https://dl.acm.org/doi/pdf/10.1145/3706598.3714093" target="_blank">[PDF]</a>
-              <span class="tag">🏆 Best Paper Award.</span>
+              <span class="award-tag">🏆 Best Paper Award.</span>
             </p>
           </div>
         </div>
